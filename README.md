@@ -20,7 +20,7 @@ This plugin forces a disciplined UI development workflow across Claude Code, Gro
 
 ```bash
 # From this repo:
-./scripts/install-into-repo.sh /path/to/your/ui-repo
+./scripts/install-into-repo.sh /path/to/your-ui-repo
 
 # Or via SKILZ once registered:
 npx skilz install SpillwaveSolutions/spillwave-ui-guard
@@ -37,6 +37,20 @@ See [docs/INSTALL.md](docs/INSTALL.md) for host-specific details.
 | `ui-visual-regression`       | Playwright screenshot comparison against baselines   |
 | `ui-accessibility-check`     | Basic a11y checks (roles, labels, contrast hints)    |
 | `ui-standards`               | Shared standards for wireframes, specs, and reviews  |
+
+## CI / hooks
+
+`scripts/check-ui-guard.sh` (run by `.github/workflows/ui-guard.yml`) **fails** when:
+
+- The repo has UI source but `wireframes/` is missing or only has the template
+- A contract file has no Goal/Screen heading or no Acceptance criteria
+- UI source changes land without a `wireframes/` update
+
+Escape hatch: `[skip-ui-guard]` in the commit or PR title.
+
+The pre-commit hook is a reminder (set `UI_GUARD_STRICT=1` to block). CI never falls back to that hook — it always runs the checker script.
+
+First contract review: [docs/AS-BUILT-REVIEW.md](docs/AS-BUILT-REVIEW.md).
 
 ## Recommended Workflow
 
