@@ -4,8 +4,8 @@
 
 ```
 1. Create feature branch
-2. Write / update wireframe(s) under wireframes/<feature>/
-   - Include acceptance criteria
+2. Write / update wireframe(s) under wireframes/
+   - Include Goal, layout, key elements, states, acceptance criteria
 3. (Optional) Write a short spec.md
 4. Implement the UI
 5. Start the app (dev server and/or Tauri)
@@ -14,7 +14,7 @@
 8. Re-run review until PASS
 9. Update visual baselines if the change was intentional
 10. Commit (pre-commit hook will remind if wireframes were skipped)
-11. Open PR
+11. Open PR — CI runs scripts/check-ui-guard.sh (structure + diff)
 ```
 
 ## Roles
@@ -25,6 +25,14 @@
 | Critic   | Adversarial review against wireframe + criteria     |
 
 Prefer different sessions or explicit role switches so the critic is not biased by having written the code.
+
+## What CI actually checks
+
+- Contract files exist under `wireframes/` (not just `_template.md`)
+- Each contract has a Goal/Screen heading and Acceptance criteria
+- If UI source (`src/`, `web/`, `app/`, `components/`) changed, `wireframes/` changed too
+
+CI does **not** launch the app. The critic agent still has to do that.
 
 ## Definition of Done (UI)
 
