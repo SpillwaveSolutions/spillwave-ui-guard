@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-# Install Spillwave UI Guard into a target repository.
+# Install Spillwave UI Guard into a target repository (vendored copy).
 # Usage: ./scripts/install-into-repo.sh /path/to/target-repo
+#
+# This copies skills, wireframe templates, host instruction files, hooks, and CI.
+# For native marketplace install (Claude / Codex / Cursor / Grok), see docs/HOSTS.md.
 
 set -euo pipefail
 
@@ -70,9 +73,15 @@ mkdir -p "$TARGET/.grok/plugins/spillwave-ui-guard"
 cp "$PLUGIN_ROOT/adapters/grok-build/plugin.json" "$TARGET/.grok/plugins/spillwave-ui-guard/"
 cp "$PLUGIN_ROOT/adapters/grok-build/GROK.md" "$TARGET/.grok/plugins/spillwave-ui-guard/"
 
-# 5. Cursor / Codex adapter
+# 5. Cursor adapter (always-on rule)
 mkdir -p "$TARGET/.cursor/rules"
-cp "$PLUGIN_ROOT/adapters/cursor/rules/ui-guard.mdc" "$TARGET/.cursor/rules/"
+if [ -f "$PLUGIN_ROOT/rules/ui-guard.mdc" ]; then
+  cp "$PLUGIN_ROOT/rules/ui-guard.mdc" "$TARGET/.cursor/rules/"
+else
+  cp "$PLUGIN_ROOT/adapters/cursor/rules/ui-guard.mdc" "$TARGET/.cursor/rules/"
+fi
+
+# 6. Cursor / Codex AGENTS.md
 if [ ! -f "$TARGET/AGENTS.md" ]; then
   cp "$PLUGIN_ROOT/adapters/cursor/AGENTS.md" "$TARGET/AGENTS.md"
 else
@@ -80,29 +89,42 @@ else
     {
       echo ""
       echo "## Spillwave UI Guard"
-      cat "$PLUGIN_ROOT/adapters/cursor/AGENTS.md" | sed '1,3d'
+      sed '1,3d' "$PLUGIN_ROOT/adapters/cursor/AGENTS.md"
     } >> "$TARGET/AGENTS.md"
   fi
 fi
 
-# 6. Hooks + CI checker
+# 7. Codex project hint (AGENTS.md is the portable contract)
+mkdir -p "$TARGET/.codex"
+if [ ! -f "$TARGET/.codex/UI_GUARD.md" ]; then
+  cp "$PLUGIN_ROOT/adapters/cursor/AGENTS.md" "$TARGET/.codex/UI_GUARD.md"
+fi
+
+# 8. Hooks + CI checker
 mkdir -p "$TARGET/hooks" "$TARGET/scripts"
 cp "$PLUGIN_ROOT/hooks/pre-commit-ui-guard.sh" "$TARGET/hooks/"
 chmod +x "$TARGET/hooks/pre-commit-ui-guard.sh"
 cp "$PLUGIN_ROOT/scripts/check-ui-guard.sh" "$TARGET/scripts/check-ui-guard.sh"
 chmod +x "$TARGET/scripts/check-ui-guard.sh"
 
-# 7. GitHub Actions workflow (CI enforcement)
+# 9. GitHub Actions workflow (CI enforcement)
 mkdir -p "$TARGET/.github/workflows"
 cp "$PLUGIN_ROOT/.github/workflows/ui-guard.yml" "$TARGET/.github/workflows/ui-guard.yml"
 
 echo ""
-echo "Installed."
+echo "Installed (vendored)."
+echo ""
+echo "Native marketplace install is also available:"
+echo "  Claude:  /plugin marketplace add SpillwaveSolutions/spillwave-ui-guard"
+echo "  Codex:   codex plugin marketplace add SpillwaveSolutions/spillwave-ui-guard"
+echo "  Cursor:  import SpillwaveSolutions/spillwave-ui-guard as a team marketplace"
+echo "  Grok:    add this repo as a marketplace source"
 echo ""
 echo "Next steps for this repo:"
 echo "  1. Review / create initial wireframes under wireframes/"
 echo "  2. Claude Code: .claude/UI_GUARD.md + .spillwave/ui-guard/skills"
 echo "  3. Grok Build: .grok/plugins/spillwave-ui-guard + .grok/skills"
 echo "  4. Cursor: .cursor/rules/ui-guard.mdc and AGENTS.md"
-echo "  5. CI: .github/workflows/ui-guard.yml runs scripts/check-ui-guard.sh"
-echo "  6. Soft pre-commit: hooks/pre-commit-ui-guard.sh (UI_GUARD_STRICT=1 to block)"
+echo "  5. Codex: AGENTS.md + .codex/UI_GUARD.md"
+echo "  6. CI: .github/workflows/ui-guard.yml runs scripts/check-ui-guard.sh"
+echo "  7. Soft pre-commit: hooks/pre-commit-ui-guard.sh (UI_GUARD_STRICT=1 to block)"

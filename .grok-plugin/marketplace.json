@@ -1,0 +1,33 @@
+{
+  "name": "spillwave-ui-guard",
+  "description": "Spillwave UI Guard — wireframe-first + adversarial UI review",
+  "owner": {
+    "name": "Rick Hightower",
+    "email": "rick@spillwave.com"
+  },
+  "plugins": [
+    {
+      "name": "spillwave-ui-guard",
+      "description": "Wireframe-first + adversarial UI review enforcement. Forces a spec before implementation and a separate critic pass before the change is accepted.",
+      "version": "0.2.0",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./"
+      },
+      "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+      "author": {
+        "name": "Rick Hightower",
+        "email": "rick@spillwave.com"
+      },
+      "keywords": [
+        "ui",
+        "wireframe",
+        "review",
+        "accessibility",
+        "visual-regression"
+      ],
+      "tags": ["ui-guard", "wireframe", "review"]
+    }
+  ]
+}

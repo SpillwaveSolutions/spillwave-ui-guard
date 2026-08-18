@@ -1,8 +1,13 @@
 {
   "name": "spillwave-ui-guard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Wireframe-first + adversarial UI review enforcement for Spillwave apps (Grok Build)",
-  "author": "Spillwave Solutions",
+  "author": {
+    "name": "Rick Hightower",
+    "email": "rick@spillwave.com"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "license": "MIT",
   "skills": [
     "../../skills/ui-standards",
     "../../skills/ui-require-wireframe",

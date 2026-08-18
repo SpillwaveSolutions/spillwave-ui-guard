@@ -1,0 +1,37 @@
+{
+  "name": "spillwave-ui-guard",
+  "version": "0.2.0",
+  "description": "Wireframe-first + adversarial UI review enforcement. Bundle reusable UI Guard skills, a critic agent, and always-on rules.",
+  "author": {
+    "name": "Rick Hightower",
+    "email": "rick@spillwave.com",
+    "url": "https://github.com/RichardHightower"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "repository": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "wireframe",
+    "review",
+    "accessibility",
+    "visual-regression",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Spillwave UI Guard",
+    "shortDescription": "Wireframe-first + adversarial UI review",
+    "longDescription": "Forces every meaningful UI change to start with a wireframe and spec, then requires a separate critic agent to launch the app and judge the running UI against acceptance criteria before the work is accepted.",
+    "developerName": "Spillwave Solutions",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+    "defaultPrompt": [
+      "Use Spillwave UI Guard to create or update a wireframe before any UI implementation.",
+      "Use Spillwave UI Guard to run an adversarial review of the running UI against acceptance criteria."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

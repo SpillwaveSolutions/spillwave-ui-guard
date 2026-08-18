@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "spillwave-ui-guard",
+  "version": "0.2.0",
+  "description": "Wireframe-first + adversarial UI review enforcement. Forces a spec before implementation and a separate critic pass before the change is accepted.",
+  "author": {
+    "name": "Rick Hightower",
+    "email": "rick@spillwave.com",
+    "url": "https://github.com/RichardHightower"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "repository": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "wireframe",
+    "adversarial-review",
+    "accessibility",
+    "visual-regression",
+    "agent-plugins"
+  ]
+}

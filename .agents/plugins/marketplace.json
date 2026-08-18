@@ -1,0 +1,20 @@
+{
+  "name": "spillwave-ui-guard",
+  "interface": {
+    "displayName": "Spillwave UI Guard"
+  },
+  "plugins": [
+    {
+      "name": "spillwave-ui-guard",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
