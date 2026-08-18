@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./hooks/remind-ui-guard.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./hooks/remind-ui-guard.sh"
+          }
+        ]
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "./hooks/remind-ui-guard.sh"
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": "./hooks/remind-ui-guard.sh"
+      }
+    ]
+  }
+}

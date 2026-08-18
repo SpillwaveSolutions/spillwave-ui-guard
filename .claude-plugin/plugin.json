@@ -4,8 +4,17 @@
   "description": "Wireframe-first + adversarial UI review enforcement for Spillwave apps. Use when implementing or reviewing screens, components, layout, navigation, or visual changes.",
   "author": {
     "name": "Rick Hightower",
-    "email": "rick@spillwave.com"
+    "email": "rick@spillwave.com",
+    "url": "https://github.com/RichardHightower"
   },
   "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
-  "license": "MIT"
+  "repository": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "wireframe",
+    "review",
+    "accessibility",
+    "visual-regression"
+  ]
 }

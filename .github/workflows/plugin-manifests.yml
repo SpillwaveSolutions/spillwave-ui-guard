@@ -1,0 +1,15 @@
+name: Plugin manifests
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  validate:
+    name: Validate host manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Agent Plugins / Claude / Codex / Cursor / Grok manifests
+        run: bash scripts/validate-plugin-manifests.sh

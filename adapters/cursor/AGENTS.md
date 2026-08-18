@@ -8,4 +8,9 @@
 - **Visual baselines**: Update screenshot baselines only after intentional visual changes are confirmed.
 - **Standards**: Follow the conventions defined by the Spillwave UI Guard skills (especially `ui-standards`).
 
+Native plugin (preferred over this vendored copy):
+
+- Cursor: import `SpillwaveSolutions/spillwave-ui-guard` as a team marketplace, or symlink the plugin to `~/.cursor/plugins/local/spillwave-ui-guard`.
+- Codex: `codex plugin marketplace add SpillwaveSolutions/spillwave-ui-guard`.
+
 These rules apply to all Spillwave UI repositories that have installed this plugin.

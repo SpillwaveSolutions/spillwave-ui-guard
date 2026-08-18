@@ -1,0 +1,20 @@
+{
+  "name": "spillwave-ui-guard",
+  "version": "0.2.0",
+  "description": "Wireframe-first + adversarial UI review enforcement for Grok Build.",
+  "author": {
+    "name": "Rick Hightower",
+    "email": "rick@spillwave.com"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "repository": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "wireframe",
+    "review",
+    "accessibility",
+    "visual-regression",
+    "grok"
+  ]
+}
