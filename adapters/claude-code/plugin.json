@@ -1,6 +1,6 @@
 {
   "name": "spillwave-ui-guard",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Wireframe-first + adversarial UI review enforcement for Spillwave apps. Use when implementing or reviewing screens, components, layout, navigation, or visual changes.",
   "author": {
     "name": "Rick Hightower",

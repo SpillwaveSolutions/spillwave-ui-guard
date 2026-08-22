@@ -1,6 +1,6 @@
 {
   "name": "spillwave-ui-guard",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Wireframe-first + adversarial UI review enforcement. Bundle reusable UI Guard skills, a critic agent, and always-on rules.",
   "author": {
     "name": "Rick Hightower",
@@ -16,7 +16,9 @@
     "review",
     "accessibility",
     "visual-regression",
-    "codex"
+    "codex",
+    "worklog",
+    "wiki-ticket-sdd"
   ],
   "skills": "./skills/",
   "hooks": "./hooks/codex-hooks.json",

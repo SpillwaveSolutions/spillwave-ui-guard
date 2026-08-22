@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Spillwave UI Guard \u2014 wireframe-first + adversarial UI review",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "pluginRoot": "."
   },
   "plugins": [
@@ -14,7 +14,7 @@
       "name": "spillwave-ui-guard",
       "source": "./",
       "description": "Wireframe-first + adversarial UI review enforcement. Always-on rule, critic agent, slash commands, and skills.",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "author": {
         "name": "Rick Hightower",
         "email": "rick@spillwave.com"
@@ -28,7 +28,9 @@
         "wireframe",
         "review",
         "accessibility",
-        "visual-regression"
+        "visual-regression",
+        "worklog",
+        "wiki-ticket-sdd"
       ],
       "skills": "./skills/",
       "rules": "./rules/",

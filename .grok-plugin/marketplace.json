@@ -9,7 +9,7 @@
     {
       "name": "spillwave-ui-guard",
       "description": "Wireframe-first + adversarial UI review enforcement. Forces a spec before implementation and a separate critic pass before the change is accepted.",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "category": "development",
       "source": {
         "type": "local",
@@ -25,7 +25,9 @@
         "wireframe",
         "review",
         "accessibility",
-        "visual-regression"
+        "visual-regression",
+        "worklog",
+        "wiki-ticket-sdd"
       ],
       "tags": [
         "ui-guard",
