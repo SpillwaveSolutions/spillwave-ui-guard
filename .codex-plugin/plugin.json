@@ -19,14 +19,17 @@
     "codex"
   ],
   "skills": "./skills/",
-  "hooks": "./hooks/hooks.json",
+  "hooks": "./hooks/codex-hooks.json",
   "interface": {
     "displayName": "Spillwave UI Guard",
     "shortDescription": "Wireframe-first + adversarial UI review",
     "longDescription": "Forces every meaningful UI change to start with a wireframe and spec, then requires a separate critic agent to launch the app and judge the running UI against acceptance criteria before the work is accepted.",
     "developerName": "Spillwave Solutions",
     "category": "Developer Tools",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://github.com/SpillwaveSolutions/spillwave-ui-guard",
     "defaultPrompt": [
       "Use Spillwave UI Guard to create or update a wireframe before any UI implementation.",

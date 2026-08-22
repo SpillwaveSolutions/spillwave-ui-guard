@@ -78,3 +78,12 @@ That writes `.grok/plugins/spillwave-ui-guard/` and `.grok/skills/`.
 | `./scripts/install-into-repo.sh` | You want wireframes, CI, and host instruction files copied into an app repo |
 
 Both can be used together. Marketplace install does not create `wireframes/` or the CI workflow — run the install script (or copy those pieces) in each UI app.
+
+## Three-host hooks
+
+If Claude Code ships `hooks/hooks.json`, this plugin also ships:
+
+- `hooks/codex-hooks.json` — Codex event map (same scripts; `ExitPlanMode` omitted)
+- `hooks/cursor-hooks.json` — Cursor-native events (`postToolUse`, `afterFileEdit`, …)
+
+`.cursor/rules/` remains soft guidance and is not a substitute for hooks.
