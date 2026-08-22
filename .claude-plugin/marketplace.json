@@ -1,7 +1,7 @@
 {
   "name": "spillwave-ui-guard",
-  "description": "Spillwave UI Guard — wireframe-first + adversarial UI review",
-  "version": "0.2.0",
+  "description": "Spillwave UI Guard \u2014 wireframe-first + adversarial UI review",
+  "version": "0.2.1",
   "owner": {
     "name": "Rick Hightower",
     "email": "rick@spillwave.com",
@@ -9,7 +9,7 @@
   },
   "metadata": {
     "description": "Wireframe-first + adversarial UI review enforcement",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "pluginRoot": "."
   },
   "plugins": [
@@ -17,7 +17,7 @@
       "name": "spillwave-ui-guard",
       "displayName": "Spillwave UI Guard",
       "description": "Wireframe-first + adversarial UI review enforcement. Use when implementing or reviewing screens, components, layout, navigation, or visual changes.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "source": "./",
       "author": {
         "name": "Rick Hightower",

@@ -1,6 +1,6 @@
 {
   "name": "spillwave-ui-guard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Wireframe-first + adversarial UI review enforcement. Always-on rule, critic agent, slash commands, and skills for Cursor.",
   "author": {
     "name": "Rick Hightower",
