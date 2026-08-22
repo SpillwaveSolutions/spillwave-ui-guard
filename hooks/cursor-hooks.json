@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "description": "Cursor-native hook port of Claude Code hooks.json. Shared scripts; event names mapped.",
+  "hooks": {
+    "preToolUse": [
+      {
+        "command": "./hooks/remind-ui-guard.sh",
+        "matcher": "Write|Edit"
+      }
+    ],
+    "postToolUse": [
+      {
+        "command": "./hooks/remind-ui-guard.sh",
+        "matcher": "Write|Edit"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "./hooks/remind-ui-guard.sh"
+      }
+    ]
+  }
+}
